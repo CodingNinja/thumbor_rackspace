@@ -14,3 +14,4 @@ Config.define('RACKSPACE_PYRAX_CFG', '~/.pyrax.cfg', 'Pyrax configuration file l
 Config.define('RACKSPACE_RESULT_STORAGES_CONTAINER', 'thumbor-test', 'Rackspace cloudfiles container', 'RESULT_STORAGE')
 Config.define('RACKSPACE_RESULT_STORAGES_CONTAINER_ROOT', '/products/', 'Root storage path', 'RESULT_STORAGE')
 Config.define('RACKSPACE_RESULT_STORAGE_EXPIRES', True, 'Whether to set expires headers on the cloudfiles objects', 'RESULT_STORAGE')
+__version__ = "0.1"
