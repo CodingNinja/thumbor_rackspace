@@ -11,7 +11,9 @@
 # HBASE STORAGE OPTIONS
 from thumbor.config import Config
 Config.define('RACKSPACE_PYRAX_CFG', '~/.pyrax.cfg', 'Pyrax configuration file location', 'RESULT_STORAGE')
+Config.define('RACKSPACE_PYRAX_REGION', 'SYD', 'Whether to connect to the private rackspace network', 'RESULT_STORAGE')
+Config.define('RACKSPACE_PYRAX_PUBLIC', True, 'Whether to connect to the private rackspace network', 'RESULT_STORAGE')
 Config.define('RACKSPACE_RESULT_STORAGES_CONTAINER', 'thumbor-test', 'Rackspace cloudfiles container', 'RESULT_STORAGE')
 Config.define('RACKSPACE_RESULT_STORAGES_CONTAINER_ROOT', '/products/', 'Root storage path', 'RESULT_STORAGE')
 Config.define('RACKSPACE_RESULT_STORAGE_EXPIRES', True, 'Whether to set expires headers on the cloudfiles objects', 'RESULT_STORAGE')
-__version__ = "0.1"
+__version__ = "0.3"

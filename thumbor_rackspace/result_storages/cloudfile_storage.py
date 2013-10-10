@@ -21,14 +21,20 @@ import pyrax
 class Storage(BaseStorage):
     def __init__(self, context):
         self.context = context
+        if(self.context.config.RACKSPACE_PYRAX_REGION):
+            pyrax.set_default_region(self.context.config.RACKSPACE_PYRAX_REGION)
+
         pyrax.set_credential_file(expanduser(self.context.config.RACKSPACE_PYRAX_CFG))
+
+        self.cloudfiles = pyrax.connect_to_cloudfiles(public=self.context.config.RACKSPACE_PYRAX_PUBLIC)
+
 
     @property
     def is_auto_webp(self):
         return self.context.config.AUTO_WEBP and self.context.request.accepts_webp
 
     def put(self, bytes):
-        cf = pyrax.cloudfiles
+        cf = self.cloudfiles
         cont = cf.get_container(self.context.config.RACKSPACE_RESULT_STORAGES_CONTAINER)
         file_abspath = self.normalize_path(self.context.request.url)
         obj = cont.store_object(file_abspath, bytes)
@@ -38,7 +44,7 @@ class Storage(BaseStorage):
 
 
     def get(self):
-        cf = pyrax.cloudfiles
+        cf = self.cloudfiles
         cont = cf.get_container(self.context.config.RACKSPACE_RESULT_STORAGES_CONTAINER)
         file_abspath = self.normalize_path(self.context.request.url)
         try:
