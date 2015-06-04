@@ -23,6 +23,14 @@ RACKSPACE_RESULT_STORAGE_EXPIRES = True # Set TTL on cloudfile objects
 RACKSPACE_RESULT_STORAGES_CONTAINER = "cloudfile-container-name"
 RACKSPACE_RESULT_STORAGES_CONTAINER_ROOT = "/"
 
+# Use rackspace for object loader.
+# For more info on result storage: https://github.com/globocom/thumbor/wiki/Loader
+LOADER = 'thumbor_rackspace.loaders.cloudfile_loader'
+
+# Loader options
+RACKSPACE_LOADER_CONTAINER = "cloudfile-container-name"
+RACKSPACE_LOADER_CONTAINER_ROOT = "/"
+
 ## Since v.3
 RACKSPACE_PYRAX_REGION = SYD
 RACKSPACE_PYRAX_PUBLIC = True
