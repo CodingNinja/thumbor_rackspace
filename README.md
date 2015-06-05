@@ -25,7 +25,7 @@ RACKSPACE_RESULT_STORAGES_CONTAINER_ROOT = "/"
 
 # Use rackspace for object loader.
 # For more info on result storage: https://github.com/globocom/thumbor/wiki/Loader
-LOADER = 'thumbor_rackspace.loaders.cloudfile_loader'
+LOADER = 'thumbor_rackspace.loaders.cloudfiles_loader'
 
 # Loader options
 RACKSPACE_LOADER_CONTAINER = "cloudfile-container-name"
