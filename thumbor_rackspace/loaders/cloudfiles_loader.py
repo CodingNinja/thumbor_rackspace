@@ -8,6 +8,7 @@
 # http://www.opensource.org/licenses/mit-license
 # Copyright (c) 2013 theiconic.com.au development@theiconic.com.au
 
+from os.path import join, expanduser
 import pyrax
 
 def load(context, path, callback):
