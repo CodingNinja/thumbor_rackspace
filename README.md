@@ -17,6 +17,7 @@ RESULT_STORAGE = 'thumbor_rackspace.result_storages.cloudfile_storage'
 
 # Pyrax Rackspace configuration file location
 RACKSPACE_PYRAX_CFG = /var/thumbor/.pyrax.cfg
+RACKSPACE_PYRAX_IDENTITY_TYPE = "rackspace"
 
 # Result Storage options
 RACKSPACE_RESULT_STORAGE_EXPIRES = True # Set TTL on cloudfile objects
