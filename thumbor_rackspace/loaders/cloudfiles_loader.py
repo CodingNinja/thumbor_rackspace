@@ -11,6 +11,7 @@
 from os.path import join, expanduser
 import pyrax
 
+
 def load(context, path, callback):
     if(context.config.RACKSPACE_PYRAX_REGION):
         pyrax.set_default_region(context.config.RACKSPACE_PYRAX_REGION)
@@ -32,6 +33,6 @@ def load(context, path, callback):
 
 
 def normalize_path(context):
-    path = join(context.config.RACKSPACE_LOADER_CONTAINER_ROOT.rstrip('/'), contenxt.request.url.lstrip('/'))
+    path = join(context.config.RACKSPACE_LOADER_CONTAINER_ROOT.rstrip('/'), context.request.url.lstrip('/'))
     path = path.replace('http://', '')
     return path
