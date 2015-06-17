@@ -29,7 +29,8 @@ def load(context, path, callback):
             logger.warning("[LOADER] Unable to find object %s/%s" % (context.config.RACKSPACE_LOADER_CONTAINER, file_abspath ))
     except:
         callback(None)
-    callback(obj.get())
+    else:
+        callback(obj.get())
 
 
 def normalize_path(context):
