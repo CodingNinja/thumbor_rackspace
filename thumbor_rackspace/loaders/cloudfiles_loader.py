@@ -19,7 +19,7 @@ def load(context, path, callback):
     pyrax.set_credential_file(expanduser(context.config.RACKSPACE_PYRAX_CFG))
     cf = pyrax.connect_to_cloudfiles(public=context.config.RACKSPACE_PYRAX_PUBLIC)
     cont = cf.get_container(context.config.RACKSPACE_LOADER_CONTAINER)
-    file_abspath = normalize_path(context)
+    file_abspath = normalize_path(context, path)
     try:
         logger.debug("[LOADER] getting from %s/%s" % (context.config.RACKSPACE_LOADER_CONTAINER, file_abspath))
         obj = cont.get_object(file_abspath)
@@ -33,7 +33,7 @@ def load(context, path, callback):
         callback(obj.get())
 
 
-def normalize_path(context):
-    path = join(context.config.RACKSPACE_LOADER_CONTAINER_ROOT.rstrip('/'), context.request.url.lstrip('/'))
+def normalize_path(context, path):
+    path = join(context.config.RACKSPACE_LOADER_CONTAINER_ROOT.rstrip('/'), path.lstrip('/'))
     path = path.replace('http://', '')
     return path
