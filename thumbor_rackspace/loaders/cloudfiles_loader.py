@@ -9,6 +9,7 @@
 # Copyright (c) 2013 theiconic.com.au development@theiconic.com.au
 
 from os.path import join, expanduser
+from thumbor.utils import logger
 import pyrax
 
 
@@ -20,8 +21,8 @@ def load(context, path, callback):
     cf = pyrax.connect_to_cloudfiles(public=context.config.RACKSPACE_PYRAX_PUBLIC)
     cont = cf.get_container(context.config.RACKSPACE_LOADER_CONTAINER)
     file_abspath = normalize_path(context, path)
+    logger.debug("[LOADER] getting from %s/%s" % (context.config.RACKSPACE_LOADER_CONTAINER, file_abspath))
     try:
-        logger.debug("[LOADER] getting from %s/%s" % (context.config.RACKSPACE_LOADER_CONTAINER, file_abspath))
         obj = cont.get_object(file_abspath)
         if obj:
             logger.debug("[LOADER] Found object at %s/%s" % (context.config.RACKSPACE_LOADER_CONTAINER, file_abspath))
