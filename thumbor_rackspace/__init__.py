@@ -14,7 +14,7 @@ Config.define('RACKSPACE_PYRAX_CFG', '~/.pyrax.cfg', 'Pyrax configuration file l
 Config.define('RACKSPACE_PYRAX_REGION', 'SYD', 'Whether to connect to the private rackspace network', 'RESULT_STORAGE')
 Config.define('RACKSPACE_PYRAX_PUBLIC', True, 'Whether to connect to the private rackspace network', 'RESULT_STORAGE')
 Config.define('RACKSPACE_RESULT_STORAGES_CONTAINER', 'thumbor-test', 'Rackspace cloudfiles container', 'RESULT_STORAGE')
-Config.define('RACKSPACE_RESULT_STORAGES_CONTAINER_ROOT', '/products/', 'Root storage path', 'RESULT_STORAGE')
+Config.define('RACKSPACE_RESULT_STORAGES_CONTAINER_ROOT', '', 'Root storage path', 'RESULT_STORAGE')
 Config.define('RACKSPACE_RESULT_STORAGE_EXPIRES', True, 'Whether to set expires headers on the cloudfiles objects', 'RESULT_STORAGE')
 
 Config.define('RACKSPACE_PYRAX_CFG', '~/.pyrax.cfg', 'Pyrax configuration file location', 'LOADER')
@@ -22,6 +22,6 @@ Config.define('RACKSPACE_PYRAX_IDENTITY_TYPE', 'rackspace', 'Pyrax identity_type
 Config.define('RACKSPACE_PYRAX_REGION', 'SYD', 'Whether to connect to the private rackspace network', 'LOADER')
 Config.define('RACKSPACE_PYRAX_PUBLIC', True, 'Whether to connect to the private rackspace network', 'LOADER')
 Config.define('RACKSPACE_LOADER_CONTAINER', 'thumbor-test', 'Rackspace cloudfiles container', 'LOADER')
-Config.define('RACKSPACE_LOADER_CONTAINER_ROOT', '/products/', 'Root storage path', 'LOADER')
+Config.define('RACKSPACE_LOADER_CONTAINER_ROOT', '', 'Root storage path', 'LOADER')
 
 __version__ = "0.4"
