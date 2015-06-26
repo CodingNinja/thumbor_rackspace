@@ -10,9 +10,11 @@
 
 from os.path import join, expanduser
 from thumbor.utils import logger
+from tornado.concurrent import return_future
 import pyrax
 
 
+@return_future
 def load(context, path, callback):
     if(context.config.RACKSPACE_PYRAX_REGION):
         pyrax.set_default_region(context.config.RACKSPACE_PYRAX_REGION)
